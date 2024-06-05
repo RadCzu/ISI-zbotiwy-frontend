@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { HelloComponent } from './hello/hello.component';
-import { DesktopHelloWorldComponent } from './desktop-hello-world/desktop-hello-world.component';
-import { MobileHelloWorldComponent } from './mobile-hello-world/mobile-hello-world.component';
 import { DeviceService } from './device.service';
 
 @Component({
@@ -11,5 +8,17 @@ import { DeviceService } from './device.service';
 })
 export class AppComponent {
   constructor(public deviceService: DeviceService) {}
-  title = 'frontend';
+  title = 'Zbodiwy';
+
+  ngOnInit() {
+    const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+    document.body.classList.add(savedTheme);
+  }
+
+  // Toggle between themes
+  toggleTheme(theme: string) {
+    document.body.className = ''; 
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }
 }

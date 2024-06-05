@@ -1,0 +1,55 @@
+
+
+.over-sound-image
+  background-color: rgba(0, 0, 0, 0)
+  position: absolute
+  top: 0
+  left: 50
+  width: 75px
+  height: 75px
+  cursor: pointer
+  &:hover
+    background-color: rgba(0, 0, 0, 0.2)
+
+.under-sound-image
+  position: absolute
+  top: 0
+  left: 50
+  width: 75px
+  height: 75px
+
+.sound-container
+  display: grid
+  grid-template-columns: 1fr 3fr // Adjust the columns to suit your design\
+  width: 500px
+  height: 75px
+  gap: 20px // Space between the grid items
+  align-items: start // Align items at the start
+
+.sound-image
+  grid-column: 1 / 2
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  position: relative
+
+.sound-title, .sound-author, .sound-hashtags
+  margin: 0
+
+.sound-title
+  grid-column: 2 / 3
+  font-size: 1.5em
+  font-weight: bold
+
+.sound-author
+  grid-column: 2 / 3
+  font-size: 1em
+  color: gray
+
+.sound-hashtags
+  grid-column: 3 / 3
+  font-size: 1em
+  color: #666
+
+

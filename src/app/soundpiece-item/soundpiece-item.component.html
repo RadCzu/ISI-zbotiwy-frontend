@@ -1,0 +1,11 @@
+<section class="sound-container">
+  <div class="sound-image">
+    <img [src]="sound.pictureLink" class="under-sound-image">
+    <img src="assets/images/transparent_arrow.png" class="over-sound-image" (click)="playSound(sound.link)">
+  </div>
+  <h4 *ngIf="sound.title; else noTitleBlock" class="sound-title">{{sound.title}}</h4>
+  <ng-template #noTitleBlock >Untitled</ng-template>
+  <p *ngIf="sound.author; else noAuthorBlock" class="sound-author">{{sound.author}}</p>
+  <ng-template #noAuthorBlock>Anonymous</ng-template>
+  <div class="sound-hashtags">/ to be implemented / hashtags</div>
+</section>

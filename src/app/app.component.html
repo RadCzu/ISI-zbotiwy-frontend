@@ -1,3 +1,10 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Zbodiwy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
 
 <main class="main">
   <section>
@@ -7,12 +14,16 @@
       </ng-container>
       <ng-template #desktop>
         <app-desktop-hello-world></app-desktop-hello-world>
+        <app-desktop-soundpiece-list></app-desktop-soundpiece-list>
       </ng-template>
     </div>
     <div>
       <app-hello></app-hello>
     </div>
   </section>
+  <button (click)="toggleTheme('dark-mode')">Dark Mode</button>
+  <button (click)="toggleTheme('light-mode')">Light Mode</button>
+  <button (click)="toggleTheme('my-eyes-mode')">My Eyes Mode</button>
 </main>
 
 

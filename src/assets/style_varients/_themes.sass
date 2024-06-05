@@ -1,0 +1,41 @@
+@use './dark-theme' as dark
+@use './light-theme' as light
+@use './my-eyes-theme' as my-eyes
+
+
+@mixin theme($theme) 
+  @if $theme == 'my-eyes' 
+    @include my-eyes.color-mixin()
+  
+  @if $theme == 'light-mode' 
+    @include light.color-mixin()
+  
+  @else 
+    @include dark.color-mixin()
+  
+
+
+.dark-mode 
+  @include dark.color-mixin()
+  transition: all 0.4s ease
+
+
+.light-mode 
+  @include light.color-mixin()
+  transition: all 0.4s ease
+
+
+.my-eyes-mode 
+  @include my-eyes.color-mixin()
+  transition: all 0.4s ease
+
+:root 
+  .dark-mode 
+    --main-theme-variable: #{dark.$main-theme-variable}
+   
+  .light-mode 
+    --main-theme-variable: #{light.$main-theme-variable}
+  
+  .my-eyes-mode 
+    --main-theme-variable: #{my-eyes.$main-theme-variable}
+   
