@@ -7,23 +7,7 @@
 </head>
 
 <main class="main">
-  <section>
-    <div>
-      <ng-container *ngIf="deviceService.isMobile(); else desktop">
-        <app-mobile-hello-world></app-mobile-hello-world>
-      </ng-container>
-      <ng-template #desktop>
-        <app-desktop-hello-world></app-desktop-hello-world>
-        <app-desktop-soundpiece-list></app-desktop-soundpiece-list>
-      </ng-template>
-    </div>
-    <div>
-      <app-hello></app-hello>
-    </div>
-  </section>
-  <button (click)="toggleTheme('dark-mode')">Dark Mode</button>
-  <button (click)="toggleTheme('light-mode')">Light Mode</button>
-  <button (click)="toggleTheme('my-eyes-mode')">My Eyes Mode</button>
+
 </main>
 
 

@@ -7,7 +7,6 @@ import { DeviceService } from './device.service';
   styleUrl: './app.component.sass',
 })
 export class AppComponent {
-  constructor(public deviceService: DeviceService) {}
   title = 'Zbodiwy';
 
   ngOnInit() {
@@ -15,10 +14,4 @@ export class AppComponent {
     document.body.classList.add(savedTheme);
   }
 
-  // Toggle between themes
-  toggleTheme(theme: string) {
-    document.body.className = ''; 
-    document.body.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }
 }

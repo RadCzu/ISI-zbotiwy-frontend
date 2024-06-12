@@ -1,0 +1,14 @@
+<section>
+  <div>
+    <ng-container *ngIf="deviceService.isMobile(); else desktop">
+      <app-mobile-hello-world></app-mobile-hello-world>
+    </ng-container>
+    <ng-template #desktop>
+      <app-desktop-main-layout></app-desktop-main-layout>
+      <app-desktop-sound-player></app-desktop-sound-player>
+      <!--<app-desktop-soundpiece-list></app-desktop-soundpiece-list>-->
+    </ng-template>
+  </div>
+  <div>
+  </div>
+</section>

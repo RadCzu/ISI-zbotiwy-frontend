@@ -1,0 +1,25 @@
+<footer class="bottom-bar">
+  <div class="sound-player">
+    <audio #audioPlayer (timeupdate)="updateProgress()">
+      <source src="audio-file.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="controls">
+      <button (click)="togglePlayPause()">&#9658;</button>
+      <input type="range" min="0" max="100" step="0.01" [(ngModel)]="progress" (input)="seekTo($event)" />
+      <div class="volume-control">
+        <button (click)="toggleVolumeControl()">
+          <img src="assets/images/volume_icon.png" alt="Volume Icon" class="volume-icon">
+        </button>
+        <div class="volume-slider" *ngIf="showVolumeControl">
+          <input type="range" min="0" max="1" step="0.01" [(ngModel)]="volume" (input)="setVolume($event)" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="settings">
+    <button (click)="toggleTheme('dark-mode')">Dark Mode</button>
+    <button (click)="toggleTheme('light-mode')">Light Mode</button>
+    <button (click)="toggleTheme('my-eyes-mode')">My Eyes Mode</button>
+  </div>
+</footer>
