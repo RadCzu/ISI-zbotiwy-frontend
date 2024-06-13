@@ -27,6 +27,8 @@ export class DesktopLoginComponent {
         return of(null);
       })
     ).subscribe();
+
+    this.router.navigate(['']);
   }
 
 }

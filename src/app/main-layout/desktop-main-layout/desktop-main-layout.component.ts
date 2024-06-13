@@ -7,5 +7,5 @@ import { DesktopSoundpieceListComponent } from '../../soundpiece-list/desktop-so
   styleUrl: './desktop-main-layout.component.sass'
 })
 export class DesktopMainLayoutComponent {
-
+    username: string = localStorage.getItem("username") ?? "test";
 }

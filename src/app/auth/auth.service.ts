@@ -11,6 +11,7 @@ export class AuthService {
   private baseUrl = 'http://localhost:8080/api/auth'; // Ensure this points to your backend
 
   private readonly _tokenKey: string = 'auth_token';
+  private readonly _usernameKey: string = 'username';
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -22,8 +23,10 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/login`, { username, password }).pipe(
       tap((response: any) => {
         const token = response.token;
+        const username = response.username;
         if (token) {
           localStorage.setItem(this._tokenKey, token);
+          localStorage.setItem(this._usernameKey, username);
         }
       })
     );

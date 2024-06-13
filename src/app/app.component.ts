@@ -12,6 +12,8 @@ export class AppComponent {
   ngOnInit() {
     const savedTheme = localStorage.getItem('theme') || 'dark-mode';
     document.body.classList.add(savedTheme);
+
+    
   }
 
 }
